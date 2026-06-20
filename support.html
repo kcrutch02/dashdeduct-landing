@@ -138,21 +138,27 @@ footer{background:var(--bg);border-top:1px solid var(--bd);padding:3rem 0 2rem}
 .faq-section{margin-top:3rem}
 .faq-section-title{font-family:var(--ff);font-size:1.15rem;font-weight:600;letter-spacing:-.015em;margin-bottom:1.25rem}
 </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L3QQ77V33G"></script>
+<!-- ============================================================
+     ANALYTICS — Replace GA_MEASUREMENT_ID and CLARITY_PROJECT_ID
+     with your real IDs before deploying.
+     ============================================================ -->
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
 <script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'G-L3QQ77V33G');
-</script><script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "x9ov5rb94c");
-</script></head>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GA_MEASUREMENT_ID');
+</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "CLARITY_PROJECT_ID");
+</script>
+</head>
 <body>
 <nav id="navbar">
   <div class="container">
@@ -314,7 +320,7 @@ gtag('config', 'G-L3QQ77V33G');
           <div class="form-success-msg" id="support-success">
             <div class="success-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
             <h4>Message sent!</h4>
-            <p>We received your message and will reply to your email within 1–2 business days.</p>
+            <p>Our support team will reply to your email within 1–2 business days.</p>
           </div>
         </div>
       </div>
@@ -333,6 +339,7 @@ gtag('config', 'G-L3QQ77V33G');
         </a>
         <p>Automatic mileage tracking and tax deduction reports for gig drivers.</p>
         <p style="margin-top:.5rem;font-size:.76rem;color:rgba(107,114,128,.55)">Not a tax advisor. For organizational use only.</p>
+        <p style="margin-top:.35rem;font-size:.72rem;color:rgba(107,114,128,.45)">Not affiliated with DoorDash, Uber, Instacart, Spark, Grubhub, or Lyft.</p>
       </div>
       <div class="footer-col">
         <h4>Product</h4>
