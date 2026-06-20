@@ -1257,6 +1257,172 @@ footer {
 
 <div class="divider"></div>
 
+<!-- ============================================================
+     LAUNCH COUNTDOWN SECTION
+     ============================================================ -->
+<section id="countdown" style="
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+">
+  <!-- Subtle glow -->
+  <div style="
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: 700px; height: 400px;
+    background: radial-gradient(ellipse, rgba(21,94,46,0.06) 0%, transparent 70%);
+    pointer-events: none; filter: blur(4px);
+  "></div>
+
+  <div class="container" style="position:relative;z-index:1;text-align:center">
+    <!-- Label -->
+    <div class="section-label fade-in">Launch Countdown</div>
+
+    <!-- Headline -->
+    <h2 class="display-lg fade-in delay-1" style="margin-bottom:0.5rem">
+      DashDeduct Launches <span class="text-emerald">July 19, 2026</span>
+    </h2>
+    <p style="color:var(--text-secondary);font-size:0.95rem;font-weight:300;margin-bottom:2.5rem;font-family:var(--font-body)" class="fade-in delay-2">
+      Lock in $3.99/month Founders Drive pricing before launch day.
+    </p>
+
+    <!-- Countdown display -->
+    <div id="countdown-display" class="fade-in delay-2" style="
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    ">
+      <!-- Days -->
+      <div style="
+        background: var(--bg-card);
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-lg);
+        padding: 1.5rem 1.75rem;
+        min-width: 110px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      ">
+        <div id="cd-days" style="
+          font-family: var(--font-display);
+          font-size: 2.75rem;
+          font-weight: 700;
+          letter-spacing: -0.03em;
+          color: var(--text-primary);
+          line-height: 1;
+          margin-bottom: 0.5rem;
+          font-variant-numeric: tabular-nums;
+        ">--</div>
+        <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted);">Days</div>
+      </div>
+
+      <!-- Separator -->
+      <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:rgba(147,196,168,0.4);line-height:1;padding-bottom:1.5rem">:</div>
+
+      <!-- Hours -->
+      <div style="
+        background: var(--bg-card);
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-lg);
+        padding: 1.5rem 1.75rem;
+        min-width: 110px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      ">
+        <div id="cd-hours" style="
+          font-family: var(--font-display);
+          font-size: 2.75rem;
+          font-weight: 700;
+          letter-spacing: -0.03em;
+          color: var(--text-primary);
+          line-height: 1;
+          margin-bottom: 0.5rem;
+          font-variant-numeric: tabular-nums;
+        ">--</div>
+        <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted);">Hours</div>
+      </div>
+
+      <!-- Separator -->
+      <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:rgba(147,196,168,0.4);line-height:1;padding-bottom:1.5rem">:</div>
+
+      <!-- Minutes -->
+      <div style="
+        background: var(--bg-card);
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-lg);
+        padding: 1.5rem 1.75rem;
+        min-width: 110px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      ">
+        <div id="cd-minutes" style="
+          font-family: var(--font-display);
+          font-size: 2.75rem;
+          font-weight: 700;
+          letter-spacing: -0.03em;
+          color: var(--text-primary);
+          line-height: 1;
+          margin-bottom: 0.5rem;
+          font-variant-numeric: tabular-nums;
+        ">--</div>
+        <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted);">Minutes</div>
+      </div>
+
+      <!-- Separator -->
+      <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:rgba(147,196,168,0.4);line-height:1;padding-bottom:1.5rem">:</div>
+
+      <!-- Seconds -->
+      <div style="
+        background: var(--bg-card);
+        border: 1px solid rgba(21,94,46,0.3);
+        border-radius: var(--radius-lg);
+        padding: 1.5rem 1.75rem;
+        min-width: 110px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.25), 0 0 0 1px rgba(21,94,46,0.1);
+      ">
+        <div id="cd-seconds" style="
+          font-family: var(--font-display);
+          font-size: 2.75rem;
+          font-weight: 700;
+          letter-spacing: -0.03em;
+          color: #93C4A8;
+          line-height: 1;
+          margin-bottom: 0.5rem;
+          font-variant-numeric: tabular-nums;
+        ">--</div>
+        <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted);">Seconds</div>
+      </div>
+    </div>
+
+    <!-- Launched state (hidden until countdown hits 0) -->
+    <div id="countdown-launched" style="display:none; margin-bottom:2.5rem">
+      <p style="
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #93C4A8;
+        letter-spacing: -0.02em;
+      ">🚀 DashDeduct is launching now.</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="fade-in delay-3">
+      <a href="#offer" class="btn btn-primary btn-lg">
+        Join Founders Drive
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <p style="margin-top:1rem;font-size:0.8rem;color:var(--text-muted)">
+        $3.99/month forever for Founders Drive members &nbsp;·&nbsp; Only 10,000 spots
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<div class="divider"></div>
+
 
 <!-- ============================================================
      FOUNDING OFFER SECTION
@@ -1318,40 +1484,21 @@ footer {
 
       <!-- Right: form -->
       <div class="fade-in delay-2">
-        <div class="form-card">
-          <div id="waitlist-form-wrap">
-            <h3>Reserve Your Founder Spot</h3>
-            <p>Lock in $3.99/month before founding spots run out.</p>
-            <div class="form-field">
-              <label for="email-input">Email address</label>
-              <input type="email" id="email-input" placeholder="you@example.com" autocomplete="email" />
-            </div>
-            <div class="form-field">
-              <label for="platform-select">Your gig platform</label>
-              <select id="platform-select">
-                <option value="" disabled selected>Select your platform</option>
-                <option value="doordash">DoorDash</option>
-                <option value="ubereats">Uber Eats</option>
-                <option value="instacart">Instacart</option>
-                <option value="spark">Spark</option>
-                <option value="amazonflex">Amazon Flex</option>
-                <option value="multiple">Multiple apps</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <button class="btn btn-primary form-submit" id="waitlist-submit">
-              Join Founders Drive
-            </button>
-            <p id="form-error" style="display:none;color:#F87171;font-size:0.78rem;margin-top:0.75rem;text-align:center;"></p>
-          </div>
-          <!-- Success state -->
-          <div class="form-success" id="form-success">
-            <div class="success-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <h4>You're on the DashDeduct Founders Drive list.</h4>
-            <p>We'll reach out soon with early access details and your locked-in $3.99/month pricing.</p>
-          </div>
+        <div class="form-card" style="padding:0;overflow:hidden;border:1px solid var(--border-light);border-radius:var(--radius-xl);position:relative">
+          <!-- Top accent line -->
+          <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(21,94,46,0.3),transparent);z-index:1"></div>
+          <!-- Tally Founders Drive Form -->
+          <iframe
+            data-tally-src="https://tally.so/embed/ZjWV9V?alignLeft=1&hideTitle=0&transparentBackground=1&dynamicHeight=1"
+            loading="lazy"
+            width="100%"
+            height="420"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            title="DashDeduct Founders Drive"
+            style="display:block;border:none;background:transparent;padding:0"
+          ></iframe>
         </div>
       </div>
 
@@ -1692,40 +1839,48 @@ if (document.getElementById('offer')) {
   progressObserver.observe(document.getElementById('offer'));
 }
 
-// ---- Waitlist form submit — mailto fallback ----
-// NOTE: Replace with a real form endpoint (Formspree, ConvertKit, etc.)
-// when backend is ready. The mailto fallback ensures no dead buttons.
-document.getElementById('waitlist-submit').addEventListener('click', function() {
-  const email = document.getElementById('email-input').value.trim();
-  const platform = document.getElementById('platform-select').value;
-  const errorEl = document.getElementById('form-error');
+// Waitlist form handled by Tally embed (https://tally.so/r/ZjWV9V)
 
-  if (!email || !email.includes('@')) {
-    errorEl.textContent = 'Please enter a valid email address.';
-    errorEl.style.display = 'block';
-    return;
+// ---- Launch Countdown — July 19, 2026 12:00 AM local time ----
+(function initCountdown() {
+  // Launch: July 19 2026, midnight local time
+  const LAUNCH = new Date(2026, 6, 19, 0, 0, 0, 0); // month is 0-indexed
+
+  const daysEl    = document.getElementById('cd-days');
+  const hoursEl   = document.getElementById('cd-hours');
+  const minsEl    = document.getElementById('cd-minutes');
+  const secsEl    = document.getElementById('cd-seconds');
+  const display   = document.getElementById('countdown-display');
+  const launched  = document.getElementById('countdown-launched');
+
+  function pad(n) { return String(Math.floor(n)).padStart(2, '0'); }
+
+  function tick() {
+    const now  = new Date();
+    const diff = LAUNCH - now;
+
+    if (diff <= 0) {
+      // Launch day — show launched message, hide countdown tiles
+      if (display)  display.style.display = 'none';
+      if (launched) launched.style.display = 'block';
+      return; // stop ticking
+    }
+
+    const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours   = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    if (daysEl)  daysEl.textContent  = String(days);
+    if (hoursEl) hoursEl.textContent = pad(hours);
+    if (minsEl)  minsEl.textContent  = pad(minutes);
+    if (secsEl)  secsEl.textContent  = pad(seconds);
+
+    setTimeout(tick, 1000);
   }
-  if (!platform) {
-    errorEl.textContent = 'Please select your gig platform.';
-    errorEl.style.display = 'block';
-    return;
-  }
-  errorEl.style.display = 'none';
 
-  // Build mailto link
-  const subject = encodeURIComponent('DashDeduct Founders Drive Waitlist');
-  const body = encodeURIComponent(
-    'Founders Drive Waitlist Signup\n' +
-    '---\n' +
-    'Email: ' + email + '\n' +
-    'Gig Platform: ' + platform
-  );
-  window.location.href = 'mailto:hello@dashdeduct.com?subject=' + subject + '&body=' + body;
-
-  // Show success state
-  document.getElementById('waitlist-form-wrap').style.display = 'none';
-  document.getElementById('form-success').classList.add('show');
-});
+  tick(); // run immediately, then every second
+})();
 
 // ---- Sticky mobile CTA: shows after hero scrolls out ----
 const stickyCta = document.getElementById('sticky-cta');
@@ -1745,5 +1900,8 @@ if (offerSection && stickyCta) {
 }
 </script>
 
+
+<!-- Tally Forms loader — enables dynamic height for Tally embeds -->
+<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
 </body>
 </html>
