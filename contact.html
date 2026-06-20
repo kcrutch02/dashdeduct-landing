@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Contact | DashDeduct</title>
-<meta name="description" content="Contact DashDeduct for general inquiries, support, partnership opportunities, or press requests."/>
+<title>Contact DashDeduct | Mileage Tracker for Gig Drivers</title>
+<meta name="description" content="Contact DashDeduct for general inquiries, support, partnership opportunities, or press requests. Email hello@dashdeduct.com." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
@@ -135,21 +135,32 @@ footer{background:var(--bg);border-top:1px solid var(--bd);padding:3rem 0 2rem}
 .response-badge-dot{width:6px;height:6px;background:#4ade80;border-radius:50%;animation:pulse-dot 2.2s ease-in-out infinite}
 @keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.7)}}
 </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L3QQ77V33G"></script>
+<!-- ============================================================
+     ANALYTICS — Replace GA_MEASUREMENT_ID and CLARITY_PROJECT_ID
+     with your real IDs before deploying.
+     ============================================================ -->
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
 <script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'G-G-L3QQ77V33G');
-</script><script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "x9ov5rb94c");
-</script></head>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GA_MEASUREMENT_ID');
+</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "CLARITY_PROJECT_ID");
+</script>
+<!-- ── SEO ── -->
+<meta name="robots" content="index,follow" />
+<link rel="canonical" href="https://dashdeduct.com/contact.html" />
+<link rel="icon" type="image/png" href="/logo.png" />
+  <link rel="apple-touch-icon" href="/logo.png" />
+</head>
 <body>
 <nav id="navbar">
   <div class="container">
@@ -293,7 +304,7 @@ gtag('config', 'G-G-L3QQ77V33G');
           <div class="form-success-msg" id="contact-success">
             <div class="success-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
             <h4>Message sent!</h4>
-            <p>Thanks for reaching out. We'll reply to your email within 1–2 business days.</p>
+            <p>Thanks for reaching out. We'll reply within 1–2 business days.</p>
           </div>
         </div>
       </div>
@@ -312,6 +323,7 @@ gtag('config', 'G-G-L3QQ77V33G');
         </a>
         <p>Automatic mileage tracking and tax deduction reports for gig drivers.</p>
         <p style="margin-top:.5rem;font-size:.76rem;color:rgba(107,114,128,.55)">Not a tax advisor. For organizational use only.</p>
+        <p style="margin-top:.35rem;font-size:.72rem;color:rgba(107,114,128,.45)">Not affiliated with DoorDash, Uber, Instacart, Spark, Grubhub, or Lyft.</p>
       </div>
       <div class="footer-col">
         <h4>Product</h4>
