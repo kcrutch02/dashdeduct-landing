@@ -283,45 +283,19 @@ footer{background:var(--bg);border-top:1px solid var(--bd);padding:3rem 0 2rem}
 
       <!-- RIGHT: contact form -->
       <div>
-        <div class="card" style="position:sticky;top:6rem">
-          <h2>Send a Message</h2>
-          <p class="card-sub">Describe your issue and we'll get back to you as soon as possible.</p>
-
-          <div id="support-form-wrap">
-            <div class="form-field">
-              <label for="s-name">Your Name</label>
-              <input type="text" id="s-name" placeholder="First Last" autocomplete="name"/>
-            </div>
-            <div class="form-field">
-              <label for="s-email">Email Address</label>
-              <input type="email" id="s-email" placeholder="you@example.com" autocomplete="email"/>
-            </div>
-            <div class="form-field">
-              <label for="s-topic">Topic</label>
-              <select id="s-topic">
-                <option value="" disabled selected>Select a topic</option>
-                <option value="Mileage Tracking">Mileage Tracking</option>
-                <option value="Account / Login">Account / Login</option>
-                <option value="Billing / Subscription">Billing / Subscription</option>
-                <option value="Reports / Export">Reports / Export</option>
-                <option value="App Bug / Technical Issue">App Bug / Technical Issue</option>
-                <option value="Delete My Account">Delete My Account</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <div class="form-field">
-              <label for="s-msg">Message</label>
-              <textarea id="s-msg" rows="5" placeholder="Describe your question or issue in detail…"></textarea>
-            </div>
-            <button class="btn btn-primary form-submit" id="support-submit">Send Message</button>
-            <p id="s-error" style="display:none;color:#F87171;font-size:.78rem;margin-top:.75rem;text-align:center"></p>
-          </div>
-
-          <div class="form-success-msg" id="support-success">
-            <div class="success-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <h4>Message sent!</h4>
-            <p>Our support team will reply to your email within 1–2 business days.</p>
-          </div>
+        <div class="card" style="position:sticky;top:6rem;padding:0;overflow:hidden;border:1px solid var(--bdl);border-radius:var(--r20)">
+          <!-- Tally Support Request Form -->
+          <iframe
+            data-tally-src="https://tally.so/embed/gDgAdD?alignLeft=1&hideTitle=0&transparentBackground=1&dynamicHeight=1"
+            loading="lazy"
+            width="100%"
+            height="500"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            title="DashDeduct Support Request"
+            style="display:block;border:none;background:transparent;padding:0"
+          ></iframe>
         </div>
       </div>
 
@@ -392,23 +366,10 @@ document.querySelectorAll('.faq-q').forEach(btn=>{
 });
 
 // ── Support form ──
-document.getElementById('support-submit').addEventListener('click',function(){
-  const name=document.getElementById('s-name').value.trim();
-  const email=document.getElementById('s-email').value.trim();
-  const topic=document.getElementById('s-topic').value;
-  const msg=document.getElementById('s-msg').value.trim();
-  const err=document.getElementById('s-error');
-  if(!name){err.textContent='Please enter your name.';err.style.display='block';return;}
-  if(!email||!email.includes('@')){err.textContent='Please enter a valid email address.';err.style.display='block';return;}
-  if(!topic){err.textContent='Please select a topic.';err.style.display='block';return;}
-  if(!msg){err.textContent='Please enter a message.';err.style.display='block';return;}
-  err.style.display='none';
-  const subject=encodeURIComponent('[DashDeduct Support] '+topic);
-  const body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\nTopic: '+topic+'\n\n'+msg);
-  window.location.href='mailto:support@dashdeduct.com?subject='+subject+'&body='+body;
-  document.getElementById('support-form-wrap').style.display='none';
-  document.getElementById('support-success').classList.add('show');
-});
+// Support form handled by Tally embed (https://tally.so/r/gDgAdD)
 </script>
+
+<!-- Tally Forms loader -->
+<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
 </body>
 </html>
